@@ -1,6 +1,8 @@
 const express = require('express')
-
+const bodyParser = require('body-parser')
 const app = express()
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
     res.send('Hello Dev!')
@@ -8,11 +10,11 @@ app.get('/', (req, res) => {
 
 app.get('/dev', (req, res) => {
 
-    const data = JSON.stringify({
+    const data = {
         name: "Ryan",
         age: 29,
         job: "Backend developer"
-    })
+    }
 
     res.send(data)
 })

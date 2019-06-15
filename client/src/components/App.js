@@ -10,6 +10,7 @@ class App extends Component {
   componentDidMount() {
     this.callToBackend()
       .then(res => {
+        console.log('res', res)
         this.setState({ data: res })})
       .catch(err => console.log(err))
   }
