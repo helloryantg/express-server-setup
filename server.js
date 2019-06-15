@@ -2,13 +2,19 @@ const express = require('express')
 
 const app = express()
 
-
 app.get('/', (req, res) => {
     res.send('Hello Dev!')
 })
 
 app.get('/dev', (req, res) => {
-    res.send('Hello, this is the /dev endpoint')
+
+    const data = JSON.stringify({
+        name: "Ryan",
+        age: 29,
+        job: "Backend developer"
+    })
+
+    res.send(data)
 })
 
 app.get('*', (req, res) => {
