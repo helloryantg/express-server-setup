@@ -8,12 +8,13 @@ app.get('/', (req, res) => {
     res.send('Hello Dev!')
 })
 
-app.get('/dev', (req, res) => {
+app.get('/devInformation', (req, res) => {
 
     const data = {
         name: "Ryan",
         age: 29,
-        job: "Backend developer"
+        job: "Backend developer",
+        portfolioUrl: "https://ryangonz.com"
     }
 
     res.send(data)
