@@ -10,7 +10,6 @@ class App extends Component {
   componentDidMount() {
     this.callToBackend()
       .then(res => {
-        console.log('res', res)
         this.setState({ data: res })})
       .catch(err => console.log(err))
   }
@@ -29,12 +28,16 @@ class App extends Component {
   render() {
 
     const { data } = this.state
+    
     if (!data) return <div>Loading</div>
+    
+    const { name, age, job } = data
 
     return (
       <div className="App">
-        <div>name: {data.name}</div>
-        <div>age: {data.age}</div>
+        <div>Name: {name}</div>
+        <div>Age: {age}</div>
+        <div>Job: {job}</div>
       </div>
     )
   }
